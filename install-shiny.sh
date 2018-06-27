@@ -45,4 +45,4 @@ sudo su - -c "R -e \"devtools::install_github('tidyverse/ggplot2')\""
 #     echo ""
 #fi
 #sed -i "s/@server_name_or_ip/${IP}/g" /etc/ipsec.conf
-sed 's//srv/shiny-server///srv/shiny-server//' /etec/shiny-server/shiny-server.conf
+sed -i 's//srv/shiny-server///srv/shiny-server//' /etec/shiny-server/shiny-server.conf
