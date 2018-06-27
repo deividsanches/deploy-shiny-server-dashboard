@@ -48,5 +48,5 @@ read port
 #sed -i "s/@server_name_or_ip/${IP}/g" /etc/ipsec.conf
 sudo sed  -i "s/3838/$port/g" /etc/shiny-server/shiny-server.conf
 cd /srv/shiny-server/
-git clone https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/sharecare-rshiny-dashboard
+sudo git clone https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/sharecare-rshiny-dashboard
 sudo systemctl restart shiny-server
