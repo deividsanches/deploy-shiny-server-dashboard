@@ -31,5 +31,5 @@ sudo su - -c "R -e \"install.packages('plotly', repos = 'http://cran.rstudio.com
 sudo su - -c "R -e \"install.packages('devtools', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"devtools::install_github('tidyverse/ggplot2')\""
 
-echo "Campo Interativo"
-read Campo-interativo
+#echo "Campo Interativo"
+#read Campo-interativo
