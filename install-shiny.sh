@@ -34,15 +34,16 @@ sudo su - -c "R -e \"devtools::install_github('tidyverse/ggplot2')\""
 #echo "Campo Interativo"
 #read Campo-interativo
 
-#echo "Informe qual ambiente deseja instalar, stg ou dev" 
-#read DASH_ENV
-#if [ -d "$DASH_ENV" ] ; then
-#         echo "OK, Apontamento feito " 
-#
-#else
+echo "Informe qual porta deseja instalar o Dashboard" 
+read port
+  if [ "$port" ] ; then
+         echo "Porta $port Escolhida " 
+    else
+  sudo sed  -i "s/3838/$port/g" /etc/shiny-server/shiny-server.conf
+  fi
 #         /bin/mkdir -p $DIR_BACK
 #        echo "O Diretorio não existia no entanto foi criado "$DIR""
 #     echo ""
 #fi
 #sed -i "s/@server_name_or_ip/${IP}/g" /etc/ipsec.conf
-sed -i 's//srv/shiny-server///srv/shiny-server//' /etec/shiny-server/shiny-server.conf
+sudo sed  -i "s/3838/$port/g" /etc/shiny-server/shiny-server.conf
