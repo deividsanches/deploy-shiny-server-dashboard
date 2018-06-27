@@ -6,6 +6,7 @@ sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linu
 
 #install required packages
 sudo apt-get update
+sudo apt-get -y install python-pip
 sudo apt-get -y install r-cran-rjava
 sudo apt-get -y install r-base
 sudo apt-get -y install gdebi-core
@@ -47,6 +48,8 @@ read port
 #fi
 #sed -i "s/@server_name_or_ip/${IP}/g" /etc/ipsec.conf
 sudo sed  -i "s/3838/$port/g" /etc/shiny-server/shiny-server.conf
+pip install awscli --upgrade --user
+aws --configure
 cd /srv/shiny-server/
 sudo git clone https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/sharecare-rshiny-dashboard
 sudo systemctl restart shiny-server
