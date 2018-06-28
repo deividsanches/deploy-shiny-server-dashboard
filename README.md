@@ -2,15 +2,13 @@
 
 ** Beta Version **
 
-Code and documento to deploy Sharecare Dashboard
+Code and document to deploy Sharecare Dashboard
 
 ---
-
 Author: Deivid Sanches
-
 ---
 
-# How to Deploy Sharecare Dashboar
+# How to Deploy Sharecare Dashboard
 
 Over ssh, just copy and paste the following command:
 
