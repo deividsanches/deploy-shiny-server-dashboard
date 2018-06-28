@@ -13,7 +13,7 @@ sudo apt-get -y install gdebi-core
 sudo apt-get -y build-dep libcurl4-gnutls-dev
 sudo apt-get -y install libcurl4-gnutls-dev
 sudo apt-get -y install apache2
-pip install awscli --upgrade --user
+sudo pip install awscli --upgrade --user
 sudo wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.5.872-amd64.deb
 sudo md5sum shiny-server-1.5.5.872-amd64.deb
 sudo gdebi shiny-server-1.5.5.872-amd64.deb -n
