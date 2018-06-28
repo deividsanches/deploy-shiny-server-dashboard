@@ -8,7 +8,7 @@ Code and documento to deploy Sharecare Dashboard
 Autor: Deivid Sanches
 ---
 
-#How to Deploy Sharecare Dashboar
+# How to Deploy Sharecare Dashboar
 
 Over ssh, just copy and paste the following command:
 
