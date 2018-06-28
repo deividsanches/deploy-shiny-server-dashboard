@@ -5,7 +5,9 @@
 Code and documento to deploy Sharecare Dashboard
 
 ---
-Autor: Deivid Sanches
+
+Author: Deivid Sanches
+
 ---
 
 # How to Deploy Sharecare Dashboar
