@@ -1,6 +1,6 @@
 # Auto deploy Sharecare Dashboard
 
-** Beta Version **
+**Beta Version**
 
 Code and document to deploy Sharecare Dashboard
 
