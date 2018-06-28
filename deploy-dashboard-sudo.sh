@@ -12,6 +12,7 @@ sudo apt-get -y install r-base
 sudo apt-get -y install gdebi-core
 sudo apt-get -y build-dep libcurl4-gnutls-dev
 sudo apt-get -y install libcurl4-gnutls-dev
+sudo apt-get -y install apache2
 pip install awscli --upgrade --user
 sudo wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.5.872-amd64.deb
 sudo md5sum shiny-server-1.5.5.872-amd64.deb
@@ -33,9 +34,7 @@ sudo su - -c "R -e \"install.packages('plotly', repos = 'http://cran.rstudio.com
 sudo su - -c "R -e \"install.packages('devtools', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"devtools::install_github('tidyverse/ggplot2')\""
 
-#echo "Campo Interativo"
-#read Campo-interativo
-
+#Dashboard Port Configurator
 echo "Informe qual porta deseja instalar o Dashboard" 
 read port
   if [ "$port" ] ; then
@@ -43,13 +42,18 @@ read port
     else
 sudo sed  -i "s/3838/$port/g" /etc/shiny-server/shiny-server.conf
   fi
-#         /bin/mkdir -p $DIR_BACK
-#        echo "O Diretorio não existia no entanto foi criado "$DIR""
-#     echo ""
-#fi
-#sed -i "s/@server_name_or_ip/${IP}/g" /etc/ipsec.conf
 sudo sed  -i "s/3838/$port/g" /etc/shiny-server/shiny-server.conf
 
+# Clone Dashboard Repository
 cd /srv/shiny-server/
 sudo git clone https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/sharecare-rshiny-dashboard
 sudo systemctl restart shiny-server
+
+#Configure Apache Server
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+
+#sudo egrep -v "^#|^$"  /etc/apache2/sites-available/000-default.conf >  /etc/apache2/sites-available/000-default.conf
+sudo mkdir passwd
+sudo touch /etc/apache2/passwd/.htpasswd
+sudo service apache2 restart
