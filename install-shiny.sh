@@ -7,6 +7,7 @@ add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubu
 #install required packages
 apt-get update
 apt-get -y install python-pip
+apt-get -y istall git
 apt-get -y install r-cran-rjava
 apt-get -y install r-base
 apt-get -y install gdebi-core
