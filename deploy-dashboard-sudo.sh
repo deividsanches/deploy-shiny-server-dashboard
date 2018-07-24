@@ -17,6 +17,8 @@ sudo pip install awscli --upgrade --user
 sudo wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.5.872-amd64.deb
 sudo md5sum shiny-server-1.5.5.872-amd64.deb
 sudo gdebi shiny-server-1.5.5.872-amd64.deb -n
+sudo apt-get install -y texlive texlive-latex-extra texlive-lang-portuguese 
+sudo apt-get install -y texlive-math-extra
 
 #Install Node.js
 sudo apt-get install -y nodejs
@@ -40,6 +42,7 @@ sudo su - -c "R -e \"install.packages('lubridate', repos = 'http://cran.rstudio.
 sudo su - -c "R -e \"install.packages('plotly', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('devtools', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"devtools::install_github('tidyverse/ggplot2')\""
+sudo su - -c "R -e \"install.packages('rmarkdown', repos = 'http://cran.rstudio.com/')\"" 
 
 #Creating directories 
 sudo mkdir /srv/auth-proxy
@@ -59,13 +62,6 @@ sudo chown ubuntu:ubuntu /srv/auth-proxy -R
 #cd /srv/shiny-server/
 #sudo git clone https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/sharecare-rshiny-dashboard
 #sudo systemctl restart shiny-server
-
-
-
-
-#Configure Apache Server
-#sudo a2enmod proxy
-#sudo a2enmod proxy_http
 
 #sudo egrep -v "^#|^$"  /etc/apache2/sites-available/000-default.conf >  /etc/apache2/sites-available/000-default.conf
 #sudo mkdir passwd
